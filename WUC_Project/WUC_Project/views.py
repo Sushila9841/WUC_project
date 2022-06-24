@@ -16,7 +16,7 @@ def WEBSITE(request):
 
 
 def BASE(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'hod/home.html')
 
 
 def LOGIN(request):
@@ -66,26 +66,24 @@ def profile(request):
 def profile_update(request):
     if request.method == "POST":
         profile_pic = request.FILES.get('profile_pic')
-    first_name = request.POST.get('first_name')
-    last_name = request.POST.get('last_name')
-    # email = request.POST.get('email')
-    # username = request.POST.get('username')
-    password = request.POST.get('password')
-    print ('profile_pic')
-    try:
-        customuser = CustomUser.objects.get(id = request.user.id)
-        customuser.first_name = first_name
-        customuser.last_name = last_name
-
-        # customuser.email = email
-        # customuser.username = username
-        if password !=None and password != "":
-            customuser.set.password(password)
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        password = request.POST.get('password')
+        # email = request.POST.get('email')
+        # username = request.POST.get('username')
+        try:
+            customuser = CustomUser.objects.get(id = request.user.id)
+            customuser.first_name = first_name
+            customuser.last_name = last_name
+            # customuser.email = email
+            # customuser.username = username
+            if password !=None and password != "":
+                customuser.set.password(password)
             if profile_pic != None and profile_pic != "":
                 customuser.profile_pics = profile_pic
             customuser.save()
             messages.success(request,'Profile update is successful')
             redirect('profile')
-    except:
-        messages.error(request, 'Your Profile is not updated')
+        except:
+            messages.error(request, 'Your Profile is not updated')
     return render(request,'profile.html')
