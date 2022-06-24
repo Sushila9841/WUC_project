@@ -1,0 +1,42 @@
+article{
+	width: 100%;
+}
+
+.break{
+	position: absolute;
+	text-align: center;
+	padding-top: 600px;
+}
+
+.function{
+	position: absolute;
+	margin-top: 10px;
+	left: 200px;
+	margin-bottom: 50px;
+}
+
+.event{
+	position: absolute;
+	margin-top: 850px;
+	left: 200px;
+}
+ 
+.col{
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+}
+
+.container{
+	left: 20px;
+	width: 500px;
+	height: 200px;
+	padding: 10px;
+	margin-left: 10px;
+	background-color: rgb(213, 238, 207)
+}
+
+.container img{
+	width: 150px;
+	height: 180px;
+}

@@ -1,0 +1,19 @@
+.photos{
+	padding-top: 900px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	margin-bottom: 100px;
+	margin-left: 100px;
+	grid-gap: 30px;
+}
+
+.photos img{
+	width: 310px;
+	height: 250px;
+}
+
+.photos img:hover{
+	opacity: 0.5;
+	transform: scale(1.2);
+}

@@ -1,0 +1,89 @@
+.sectionA{
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.wrapperC{
+    padding-top: 150px ;
+}
+
+.contact_container .wrapperC{
+    background-color: #000;
+    margin: 200px 200px;
+    padding: 50px 50px;
+ }
+ .contact_container{
+    max-width: 960px;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:  1.5rem;
+    background:  #d3f6b5;
+    box-shadow:  0 0 1rem hsla(0 0 0 / 16%);
+    border-radius: 0.5rem;
+    over-flow:  hidden;
+    opacity: 75%;
+
+}
+.form_container {
+    padding:  20px;
+}
+.form_container h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom:  1rem;
+}
+.contact_form{
+    display: grid;
+    row-gap: 1rem;
+}
+.contact_form input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #fff;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #000;
+    border-radius: 0.4rem;
+}
+.contact_form text-area{
+    resize: none;
+    height: 200px;
+}
+.contact_form .send_button{
+    border: none;
+    outline: none;
+    background: #114105;
+    font-size:  1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.contact_form .send_button:hover{
+    background: hsl(181, 100%, 44%, 0.8);
+    transition: 0.3s all linear;
+}
+.Map iframe{
+    width: 100%;
+    height: 100%;
+}
+/* Making the page Responsive */
+@media (max-width: 964px) {
+    .contact_container {
+        margin:  0 auto;
+        width: 90%;
+    }
+}
+@media (max-width: 700px){
+    .contact_container{
+        grid-template-columns: 1fr;
+        gap: 1rem ;
+        margin-top: 20rem !important;
+    }
+    .Map iframe{
+        height: 400px;
+    }
+}
+/*Contact us page finished */

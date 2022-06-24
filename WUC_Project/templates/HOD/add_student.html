@@ -1,0 +1,81 @@
+{% extends 'dashboard.html'%}
+{% block content %}
+   <div class="row">
+<div class="col-sm-12">
+<div class="card">
+<div class="card-body">
+<form method="post" action="{% url 'profile_update' %}" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="col-12">
+<h5 class="form-title"><span>Add Student</span></h5>
+<!--    for error message -->
+    {% if messages %}
+            {% for messages in messages %}
+            {% if messages.tags == 'error' %}
+            <div class="alert alert-info" role="alert">
+<!--              Username or password is incorrect-->
+<!--                please enter correct user name-->
+                {{messages}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+<!--  for update success  -->
+    {% if messages %}
+            {% for messages in messages %}
+            {% if messages.tags == 'success' %}
+            <div class="alert alert-info" role="alert">
+<!--              Username or password is incorrect-->
+<!--                please enter correct user name-->
+                {{messages}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+</div>
+
+<div class="form-group">
+<label>Profile Picture</label>
+<input type="file" class="form-control">
+
+</div>
+<div class="col-12 col-sm-6">
+<div class="form-group">
+<label>First Name</label>
+<input type="text" class="form-control" name="first_name" value="{{user.first_name}}">
+</div>
+</div>
+<div class="col-12 col-sm-6">
+<div class="form-group">
+<label>Last Name</label>
+<input type="text" class="form-control" name="last_name" >
+</div>
+</div>
+    <div class="col-12 col-sm-6">
+<div class="form-group">
+<label>Email</label>
+<input type="text" class="form-control" name="email">
+</div>
+</div>
+    <div class="col-12 col-sm-6">
+<div class="form-group">
+<label>User Name</label>
+<input type="text" class="form-control" name="username" >
+</div>
+</div>
+    <div class="col-12 col-sm-6">
+<div class="form-group">
+<label>Password</label>
+<input type="password" class="form-control" name="password">
+</div>
+</div>
+<div class="col-12">
+<button type="submit" class="btn btn-primary">UPDATE PROFILE</button>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

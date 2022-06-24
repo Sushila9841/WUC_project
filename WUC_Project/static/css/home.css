@@ -1,0 +1,73 @@
+section{
+	width: 100%;
+}
+
+.main{
+	position: absolute;
+	top: 0px;
+}
+
+.page{
+	position: relative;
+	color: white;
+	text-align: center;
+}
+
+img .university{
+	width: 100%;
+	height: 450px;
+}
+
+.intro{
+	text-align: center;
+}
+
+.title{
+	position: absolute;
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+	color: #8ebf42;
+	left: 30px;
+	top: 170px;
+}
+
+.title:hover{
+	transform: scale(1.2);
+	color: #8ebf42 ;
+}
+
+.info{
+	position: absolute;
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 20px;
+	font-style: italic;
+	left: 30px;
+	text-align: center;
+	top: 230px;
+	width: 500px;
+}
+
+.now{
+	text-align: center;
+	text-color: rgb(71, 118, 59);
+	font-size: 30px;
+	padding: 20px;
+}
+
+.line {
+  	border-bottom: 2px solid green;
+  	width: 80%;
+  	position: absolute;
+  	left: 10%;
+  	right: 10%;
+  	margin-bottom: 20px;
+}
+
+.motto{
+	text-align: center;
+	padding: 30px;
+	font-size: 40px;
+	color: #114105;
+}

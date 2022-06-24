@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Apply Page </title>
+			<!-- CSS file -->
+			<link href="css/form_apply.css" rel="stylesheet" type="text/css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		</head>
+			<body>
+
+				<nav>
+					<a href="mainlayout.html">
+						<img class="logo" src="Img/Menu.png" alt="logo of Woodland University">
+					</a>
+				</nav>
+
+				<section>
+
+					<div class="image_box">
+						<img class="back" src="Img/apply.jpg" alt="background of the form">
+					</div>
+
+					<div class="box">	
+						<h2 class="head">Online Application Form</h2>
+
+							<form>
+								<div class="visitor">
+
+									<p> Full Name</p>
+									<input type="text" name="fullname" required="required" placeholder="Full Name" size="10">
+									<input type="text" name="lastname" required="required" placeholder="Last Name" size="10">
+
+								</div> 
+
+								<div class="side">
+									<div class="visitor">
+
+		        						<div class="dates">
+		         							<p>Date of Birth</p>
+		          							<input type="date" name="birthdate" required="required">
+		          						</div>
+
+		          					</div>
+
+									<div class="visitor add">
+
+										<p>Address</p>
+										<input id="width" type="text" name="address" required="required" placeholder="Address" size="10">
+
+									</div>
+
+									<div class="visitor phone">
+
+										<p>Phone Number</p> 
+										<input type="tel" name="phone" id="phone" placeholder="Contact no." required="required">
+
+									</div>
+
+								</div>
+
+								<div class="side">
+
+									<div class="visitor">
+
+										<p> Email </p>
+										<input id="width" type="Email" id="emali" name="email" required="required" placeholder="Email">
+
+									</div>
+
+									<div class="visitor cour">
+
+										<p>Course:</p>
+											<select name="course" id="course">
+												<option value="BSc Computing">BSc Computing</option>
+												<option value="BSc Software Engineering">BSc Software Engineering</option>
+												<option value="BSc Computer Network Engineering">BSc Computer Network Engineering</option>
+												<option value="MSc Computing">MSc Computing</option>
+											</select>
+
+									</div>
+
+									<div class="visitor late">
+
+										<p>Latest Qualification:</p>
+										<input type="text" name="qualification" required="required" placeholder="Qualification">
+							
+									</div>
+
+								</div>
+
+								<div class="visitor">
+
+									<p> College Information</p>
+									<input type="text" name="College Name" required="required" placeholder="College Name">
+									<input type="text" name="grade" required="required" placeholder="Grade">
+									<input type="tel" name="College number" required="required" placeholder="College Contact no.">
+
+								</div>
+
+								<div class="visitor">
+
+									<p>Parents Info:</p>
+									<input type="text" name="fathername" required="required" placeholder="Father's Name">
+									<input type="tel" name="father'snumber" required="required" placeholder="Father's Contact no.">
+									<br>
+									<input type="text" name="mothername" required="required" placeholder="Mother's Name">
+									<input type="tel" name="Mother'snumber" required="required" placeholder="Mother's Contact no.">
+
+								</div>
+
+								<div class="btn">
+									<button type="submit">Apply</button>
+								</div>
+							
+							</form>
+					</div>
+
+				</section>
+
+			</body>
+	</html>

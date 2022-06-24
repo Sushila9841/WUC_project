@@ -1,0 +1,69 @@
+.about{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.row{
+  padding-bottom: 50px;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.abtus{
+  padding-top: 100px;
+}
+
+.about_section {
+  padding: 50px;
+  text-align: center;
+  background-color: #d3f6b5;
+  color: #000000;
+}
+
+.container1{
+  padding: 0 16px;
+}
+
+.container1::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title1{
+  color: grey;
+}
+
+.btn2 {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #114105;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn2:hover {
+  background-color: #53A340;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+/*AboutUs page finished */
