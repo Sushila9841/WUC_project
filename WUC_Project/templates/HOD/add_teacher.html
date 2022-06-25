@@ -1,5 +1,6 @@
 {% extends 'dashboard.html'%}
 {% block content %}
+<div class="page-wrapper">
    <div class="row">
 <div class="col-sm-12">
 <div class="card">
@@ -7,37 +8,16 @@
 <form method="post" action="{% url 'profile_update' %}" enctype="multipart/form-data">
 {% csrf_token %}
 <div class="col-12">
-<h5 class="form-title"><span>Add Student</span></h5>
-<!--    for error message -->
-    {% if messages %}
-            {% for messages in messages %}
-            {% if messages.tags == 'error' %}
-            <div class="alert alert-info" role="alert">
-<!--              Username or password is incorrect-->
-<!--                please enter correct user name-->
-                {{messages}}
-            </div>
-            {% endif %}
-            {% endfor %}
-            {% endif %}
-<!--  for update success  -->
-    {% if messages %}
-            {% for messages in messages %}
-            {% if messages.tags == 'success' %}
-            <div class="alert alert-info" role="alert">
-<!--              Username or password is incorrect-->
-<!--                please enter correct user name-->
-                {{messages}}
-            </div>
-            {% endif %}
-            {% endfor %}
-            {% endif %}
-</div>
+<h5 class="form-title"><span>Add Teacher</span></h5>
 
+</div>
+    {% include 'include/messages.html'%}
+
+<div class="col-12 col-sm-6">
 <div class="form-group">
 <label>Profile Picture</label>
-<input type="file" class="form-control">
-
+<input type="file" class="form-control" name="profile_pic">
+</div>
 </div>
 <div class="col-12 col-sm-6">
 <div class="form-group">
@@ -83,6 +63,7 @@
 </form>
 </div>
 </div>
+    </div>
 </div>
 </div>
 {% endblock %}

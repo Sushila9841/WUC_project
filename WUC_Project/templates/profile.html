@@ -6,8 +6,12 @@
 <div class="card-body">
 <form method="post" action="{% url 'profile_update' %}" enctype="multipart/form-data">
 {% csrf_token %}
+     <div class ="page-wrapper">
+
 <div class="col-12">
-<h5 class="form-title"><span>Profile Update</span></h5>
+   <h5 class="form-title"><span>Profile Update</span></h5>
+</div>
+
 <!--    for error message -->
     {% if messages %}
             {% for messages in messages %}
@@ -32,7 +36,7 @@
             {% endif %}
             {% endfor %}
             {% endif %}
-</div>
+
 
 <div class="form-group">
 <label>Profile Picture</label>
@@ -74,6 +78,7 @@
 </div>
 
 </form>
+</div>
 </div>
 </div>
 </div>

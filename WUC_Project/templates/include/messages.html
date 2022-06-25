@@ -1,0 +1,36 @@
+<!--{% load static% }-->
+<!--    for error message -->
+    {% if messages %}
+            {% for messages in messages %}
+            {% if messages.tags == 'error' %}
+            <div class="alert alert-danger" role="alert">
+<!--              Username or password is incorrect-->
+<!--                please enter correct user name-->
+                {{messages}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+<!--  for update success  -->
+    {% if messages %}
+            {% for messages in messages %}
+            {% if messages.tags == 'success' %}
+            <div class="alert alert-success" role="alert">
+<!--              Username or password is incorrect-->
+<!--                please enter correct user name-->
+                {{messages}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+    {% if messages %}
+            {% for messages in messages %}
+            {% if messages.tags == 'warning' %}
+            <div class="alert alert-warning" role="alert">
+<!--              Username or password is incorrect-->
+<!--                please enter correct user name-->
+                {{messages}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}

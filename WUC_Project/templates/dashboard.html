@@ -16,10 +16,12 @@
 </head>
 <body>
 <div class="main-wrapper">
+<!--    <div class="page-wrapper">-->
     {% include 'include/header.html' %}
     {% include 'include/sidebar.html' %}
             {% block content %}
                {% endblock %}
+<!--    </div>-->
 </div>
       <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
       <script src="{% static 'assets/js/popper.min.js' %}"></script>

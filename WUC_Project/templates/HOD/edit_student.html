@@ -1,4 +1,5 @@
-{% extends 'dashboard.html'%}
+{% include 'dashboard.html'%}
+
 {% block content %}
 <div class="page-wrapper">
      <div class="content container-fluid">
@@ -9,9 +10,9 @@
 <form method="post" action="{% url 'add_student' %}" enctype="multipart/form-data">
 {% csrf_token %}
 <div class="col-12">
-<h5 class="form-title"><span>Add Student</span></h5>
+<h5 class="form-title"><span>Edit Student</span></h5>
+ {% include 'include/messages.html'%}
 </div>
-     {% include 'include/messages.html'%}
 
 <div class="form-group">
 <label>Profile Picture</label>
@@ -21,31 +22,31 @@
 <div class="col-12 col-sm-6">
 <div class="form-group">
 <label>First Name</label>
-<input type="text" class="form-control" name="first_name" required> <!-- //value="{{user.first_name}}">-->
+<input type="text" class="form-control" name="first_name"  value="{% for i in student%}{{i.admin.first_name}}{% endfor %}" required> <!-- //value="{{user.first_name}}">-->
 </div>
 </div>
 <div class="col-12 col-sm-6">
 <div class="form-group">
 <label>Last Name</label>
-<input type="text" class="form-control" name="last_name" required >
+<input type="text" class="form-control" name="last_name"  value="{% for i in student%}{{i.admin.last_name}}{% endfor %}" required >
 </div>
 </div>
     <div class="col-12 col-sm-6">
 <div class="form-group">
 <label>Email</label>
-<input type="text" class="form-control" name="email" required>
+<input type="text" class="form-control" name="email"  value="{% for i in student%}{{i.admin.email}}{% endfor %}" required>
 </div>
 </div>
     <div class="col-12 col-sm-6">
 <div class="form-group">
 <label>User Name</label>
-<input type="text" class="form-control" name="username" required>
+<input type="text" class="form-control" name="username"  value="{% for i in student%}{{i.admin.username}}{% endfor %}" required>
 </div>
 </div>
     <div class="col-12 col-sm-6">
 <div class="form-group">
 <label>Password</label>
-<input type="password" class="form-control" name="password" required>
+<input type="password" class="form-control" name="password" placeholder="Fill only if you want to change password" required>
 </div>
 </div>
     <div class="col-12 col-sm-6">
@@ -85,15 +86,15 @@
      <div class="col-12 col-sm-6">
         <div class="form-group">
         <label>Address</label>
-        <textarea class="form-control" name="address" required></textarea>
+        <textarea class="form-control" name="address" required>{% for i in student%}{{i.address}}{% endfor %}</textarea>
         </div>
         </div>
 
 
 
         <div class="col-12">
-        <button type="submit" class="btn btn-primary">ADD STUDENT</button>
-</div>
+        <button type="submit" class="btn btn-primary">EDIT STUDENT</button>
+        </div>
 
 
 </form>
@@ -104,4 +105,5 @@
     </div>
 </div>
 </div>
+
 {% endblock %}
