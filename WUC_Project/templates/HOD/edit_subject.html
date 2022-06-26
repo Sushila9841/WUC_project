@@ -6,20 +6,21 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" action="{% url 'add_course'%}" >
+                        <form method="post" action="{% url 'update_course'%}" >
                             {% csrf_token %}
                             <div class="col-12">
-                                <h5 class="form-title"><span>Add Subject</span></h5>
+                                <h5 class="form-title"><span>Edit Course</span></h5>
                             </div>
                                 {% include 'include/messages.html'%}
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label>Subject Name</label>
-                                        <input type="text" class="form-control" name="course_name" required >
+                                        <label>Edit Name</label>
+                                        <input type="text" class="form-control" name="name" value="{{subject.name}}" required >
+                                        <input type="text" class="form-control" name="course_id" value="{{subject_id }}" hidden>
                                     </div>
                                 </div>
                             <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">ADD COURSE</button>
+                                    <button type="submit" class="btn btn-primary">UPDATE COURSE</button>
                                 </div>
                         </form>
                     </div>

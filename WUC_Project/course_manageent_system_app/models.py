@@ -57,6 +57,7 @@ class Teachers(models.Model):
     def __str__(self):
         return self.admin.username
 
+
 # class Subject(models.Model):
 class Subject(models.Model):
     session_start = models.CharField(max_length=100)

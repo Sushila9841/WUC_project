@@ -42,10 +42,10 @@ urlpatterns = [
 
                   #for subject from admin,
                   path('HOD/add/subject', views_admin.ADD_SUBJECT, name='add_subject'),
-                  # path('HOD/view/course', views_admin.VIEW_COURSE, name='view_course'),
-                  # path('HOD/edit/course/<str:id>', views_admin.EDIT_COURSE, name='edit_course'),
-                  # path('HOD/update/course', views_admin.UPDATE_COURSE, name='update_course'),
-                  # path('HOD/delete/course/<str:id>', views_admin.DELETE_COURSE, name='delete_course')
+                  path('HOD/view/subject', views_admin.VIEW_COURSE, name='view_subject'),
+                  path('HOD/edit/subject/<str:id>', views_admin.EDIT_COURSE, name='edit_subject'),
+                  path('HOD/update/subject', views_admin.UPDATE_COURSE, name='update_subject'),
+                  path('HOD/delete/subject/<str:id>', views_admin.DELETE_COURSE, name='delete_subject')
 
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

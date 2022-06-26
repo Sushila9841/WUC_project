@@ -1,4 +1,4 @@
-{% load active_link_tags %}
+
 <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                <div id="sidebar-menu" class="sidebar-menu">
@@ -30,10 +30,10 @@
                         </ul>
                      </li>
                      <li class="submenu">
-                        <a href="#"><i class="fas fa-clock"></i> <span> Session</span> <span class="menu-arrow"></span></a>
+                        <a href="#"><i class="fas fa-clock"></i> <span>Subject</span> <span class="menu-arrow"></span></a>
                         <ul>
-                           <li><a href="subjects.html">Session View</a></li>
-                           <li><a href="add-subject.html">Session Add</a></li>
+                           <li><a href="{% url 'view_subject' %}">Subject View</a></li>
+                           <li><a href="{% url 'add_subject' %}">Subject Add</a></li>
                         </ul>
                      </li>
                      <li>

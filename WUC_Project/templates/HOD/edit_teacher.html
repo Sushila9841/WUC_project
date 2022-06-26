@@ -7,7 +7,7 @@
 <div class="col-sm-12">
 <div class="card">
 <div class="card-body">
-<form method="post" action="{% url 'update_student' %}" enctype="multipart/form-data">
+<form method="post" action="{% url 'update_teacher' %}" enctype="multipart/form-data">
 {% csrf_token %}
 <div class="col-12">
 <h5 class="form-title"><span>Edit Teacher</span></h5>
@@ -15,10 +15,7 @@
 </div>
 
 <div class="form-group">
-<label>Profile Picture</label>
-<input type="file" class="form-control" name = "profile_pic" >
-    <input type="file" class="form-control" name = "student_id" value="{% for i in teacher%}{% endfor %}" hidden>
-
+    <input type="file" class="form-control" name = "teacher_id" value="{% for i in teacher%}{% endfor %}" hidden>
 </div>
 <div class="col-12 col-sm-6">
 <div class="form-group">

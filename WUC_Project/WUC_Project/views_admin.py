@@ -78,16 +78,7 @@ def ADD_STUDENT(request):
             messages.success(request,
                              user.first_name + "  " + user.last_name + "   " + 'student are added succuessfully')
             return redirect('add_student')
-    #      if CustomUser.objects.filter(email=email).exists():
-    #          messages.warning(request,'Email Is Already Taken')
-    #         return redirect('add_student')
-    #         if CustomUser.objects.filter(username=username).exists():
-    #             messages.warning(request, 'Username Is Already Taken')
-    #         return redirect('add_student')
-    # else:
-
-    # print(profile_pic,first_name,email,username,password,gender,course_id,session_year_id,address)
-
+    #
     context = {
         'course': course,
         'session': session,
@@ -270,7 +261,7 @@ def VIEW_TEACHER(request):
     context = {
         'teacher': teacher,
     }
-    return render(request, 'HOD/view_teacher.html')
+    return render(request, 'HOD/view_teacher.html', context)
 
 
 def EDIT_TEACHER(request, id):
@@ -285,34 +276,65 @@ def EDIT_TEACHER(request, id):
 
 
 def UPDATE_TEACHER(request):
-    return render(request, 'HOD/update_teacher.html', context)
+    if request.method == "POST":
+        teacher_id = request.POST.get('student_id')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        gender = request.POST.get('gender')
+        address = request.POST.get('address')
+
+        user = CustomUser.objects.get(id=teacher_id)
+        user.first_name = first_name
+        user.last_name = last_name
+        user.gender = gender
+        user.email = email
+        user.username = username
+
+    if password != None and password != "":
+        user.set_password(password)
+    user.save()
+
+    teacher = Teachers.objects.get(admin=student_id)
+    teacher.address = address
+    teacher.gender = gende
+
+    teacher.save()
+    messages.success(request, 'Profile successfully updated')
+
+    return render(request, 'HOD/view_teacher.html')
+
+    # return render(request, 'HOD/update_teacher.html', context)
 
 
 def DELETE_TEACHER(request, id):
-    course = Course.objects.get(id=id)
-    course.delete()
+    teacher = Teachers.objects.get(id=id)
+    teacher.delete()
     messages.success(request, 'Course are deleted successfully')
     return render('delete_teacher')
 
-#for subjects
+
+# for subjects
 def ADD_SUBJECT(request):
     if request.method == 'POST':
-        course_name = request.POST.get('course_name')
+        subject_name = request.POST.get('course_name')
         # print(course_name)
-        course = Course(
-            name=course_name
+        subject = Subject(
+            name= subject_name
         )
-        course.save()
+        subject.save()
         messages.success(request, 'Course added successfully')
         return redirect('add_subject')
     return render(request, 'HOD/add_subject.html')
 
 
 def VIEW_SUBJECT(request):
-    course = Course.objects.all()
+    subject = Subject.objects.all()
     # print(course)
     context = {
-        'course': course,
+        'subject': subject,
     }
     return render(request, 'HOD/view_subject.html', context)
 
@@ -321,7 +343,7 @@ def EDIT_SUBJECT(request, id):
     subject = Subject.objects.get(id=id)
 
     context = {
-        'course': course,
+        'subject': subject,
     }
     return render(request, 'HOD/edit_subject.html', context)
 
@@ -329,18 +351,18 @@ def EDIT_SUBJECT(request, id):
 def UPDATE_SUBJECT(request):
     if request.method == 'POST':
         name = request.POST.get('name')
-        course_id = request.POST.get('course_id')
+        subject_id = request.POST.get('subject_id')
 
-        course = Course.objects.get(id=course_id)
-        course.name = name
-        course.save()
+        subject = Subject.objects.get(id=subjecte_id)
+        subject.name = name
+        subject.save()
         messages.success(request, 'Course are updated successfully')
         return redirect('view_course')
     return render(request, 'HOD/edit_subject.html')
 
 
 def DELETE_SUBJECT(request, id):
-    course = Course.objects.get(id=id)
-    course.delete()
+    subject = Subject.objects.get(id=id)
+    subject.delete()
     messages.success(request, 'Course are deleted successfully')
     return render('view_subject')
