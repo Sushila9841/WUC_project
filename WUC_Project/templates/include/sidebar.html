@@ -1,4 +1,4 @@
-{% load static %}
+{% load active_link_tags %}
 <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                <div id="sidebar-menu" class="sidebar-menu">
@@ -17,7 +17,7 @@
                      <li class="submenu">
                         <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span class="menu-arrow"></span></a>
                         <ul>
-                           <li><a href="teacher-details.html">Teacher View</a></li>
+                           <li><a href="{%url 'view_teacher' %}">Teacher View</a></li>
                            <li><a href="{% url 'add_teacher'%}">Teacher Add</a></li>
 
                         </ul>
@@ -25,17 +25,15 @@
                      <li class="submenu">
                         <a href="#"><i class="fa fa-graduation-cap"></i> <span> Course</span> <span class="menu-arrow"></span></a>
                         <ul>
-                           <li><a href="departments.html">Course List</a></li>
-                           <li><a href="add-department.html">Course Add</a></li>
-                           <li><a href="edit-department.html">Course Edit</a></li>
+                           <li><a href="{% url 'view_course' %}">Course View</a></li>
+                           <li><a href="{% url 'add_course' %}">Course Add</a></li>
                         </ul>
                      </li>
                      <li class="submenu">
                         <a href="#"><i class="fas fa-clock"></i> <span> Session</span> <span class="menu-arrow"></span></a>
                         <ul>
-                           <li><a href="subjects.html">Session List</a></li>
+                           <li><a href="subjects.html">Session View</a></li>
                            <li><a href="add-subject.html">Session Add</a></li>
-                           <li><a href="edit-subject.html">Session Edit</a></li>
                         </ul>
                      </li>
                      <li>
